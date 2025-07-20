@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HACKER ID CARD</title>
+    <link rel="stylesheet" href="carte.css">
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="welcome-message" id="welcomeMessage">
+        <h2>🖥️ SYSTEM INITIALIZED</h2>
+        <p>
+> Welcome dans le générateur de carte hacker<br>
+> Crée ton identité numérique<br>
+> Style terminal activé<br>
+> Prêt à recevoir les inputs</p>
+        <p class="blink">>> _</p>
+        <button class="welcome-btn" id="welcomeBtn">EXECUTE</button>
+    </div>
+
+    <h1>HACKER ID CARD</h1>
+    
+    <div class="container">
+        <div class="form-container">
+            <div class="form-group">
+                <label for="realName">>> REAL NAME</label>
+                <input type="text" id="realName" placeholder="Dan jersey" class="terminal-effect">
+            </div>
+            
+            <div class="form-group">
+                <label for="devName">>> HACKER NAME</label>
+                <input type="text" id="devName" placeholder="0xDarkShadow" class="terminal-effect">
+            </div>
+            
+            <div class="form-group">
+                <label for="devTitle">>> SPECIALTY</label>
+                <div class="blase-selector">
+                    <div class="blase-option" data-title="Code Hacker">Code Hacker</div>
+                    <div class="blase-option" data-title="System Cracker">System Cracker</div>
+                    <div class="blase-option" data-title="Cyber Ninja">Cyber Ninja</div>
+                    <div class="blase-option" data-title="Data Thief">Data Thief</div>
+                </div>
+                <input type="text" id="devTitle" placeholder="Ou écris ta spécialité" class="terminal-effect">
+            </div>
+            
+            <div class="form-group">
+                <label for="age">>> AGE</label>
+                <input type="number" id="age" placeholder="19" value="19" class="terminal-effect">
+            </div>
+            
+            <div class="form-group">
+                <label for="nationality">>> ORIGIN</label>
+                <input type="text" id="nationality" placeholder="Dark Web" class="terminal-effect">
+            </div>
+            
+            <div class="form-group">
+                <label for="languages">>> SKILLS (séparés par des virgules)</label>
+                <input type="text" id="languages" placeholder="Python, Bash, SQL..." class="terminal-effect">
+            </div>
+            
+            <div class="form-group">
+                <label for="favLanguage">>> MAIN SKILL</label>
+                <input type="text" id="favLanguage" placeholder="Python" class="terminal-effect">
+            </div>
+            
+            <div class="form-group">
+                <label for="avatar">>> UPLOAD AVATAR</label>
+                <input type="file" id="avatar" accept="image/*">
+            </div>
+            
+            <button id="generateBtn" class="btn">GENERATE CARD</button>
+        </div>
+    </div>
+    
+    <div class="card-container">
+        <div class="dev-card" id="devCard">
+            <div class="card-header">
+                <h2 class="card-title" id="cardDevName">0xDarkShadow</h2>
+                <span class="card-badge" id="cardDevTitle">Code Hacker</span>
+            </div>
+            
+            <img src="https://via.placeholder.com/150/0a0a0a/00ff41?text=HACKER" alt="Avatar" class="card-avatar" id="avatarPreview">
+            
+            <div class="card-info">
+                <div class="card-info-item">
+                    <span class="card-info-label">REAL NAME:</span>
+                    <span class="card-info-value" id="cardRealName">John Doe</span>
+                </div>
+                <div class="card-info-item">
+                    <span class="card-info-label">AGE:</span>
+                    <span class="card-info-value" id="cardAge">19</span>
+                </div>
+                <div class="card-info-item">
+                    <span class="card-info-label">ORIGIN:</span>
+                    <span class="card-info-value" id="cardNationality">Dark Web</span>
+                </div>
+            </div>
+            
+            <div class="card-info-item">
+                <span class="card-info-label">MAIN SKILL:</span>
+                <span class="card-info-value" id="cardFavLanguage">Python</span>
+            </div>
+            
+            <div class="card-languages" id="cardLanguages">
+                <span class="language-tag">Python</span>
+                <span class="language-tag">Bash</span>
+                <span class="language-tag primary">SQL</span>
+                <span class="language-tag">C++</span>
+            </div>
+            
+            <div class="card-footer">
+                <p>© 2025 HACKER ID SYSTEM - ACCESS GRANTED</p>
+            </div>
+        </div>
+        <button id="downloadBtn" class="btn download-btn">DOWNLOAD CARD</button>
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="carte.js"></script>
+</body>
+</html>
