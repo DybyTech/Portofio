@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🖥️🕶️ MarcTech Weather - MarcTech</title>
+  <link rel="stylesheet" href="meteo.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+  <h1><i class="fas fa-terminal"></i> MarcTech WEATHER - MarcTech</h1>
+
+  <div class="container" role="main" aria-label="Application météo">
+    <form id="weatherForm" autocomplete="off" spellcheck="false" aria-describedby="instructions">
+      <label for="cityInput" id="instructions" style="display:none;">Entrez le nom de la ville ou du pays</label>
+      <input
+        id="cityInput"
+        name="city"
+        type="text"
+        placeholder="exemple: kinshasa"
+        required
+        aria-required="true"
+        aria-label="Entrer la ville ou pays"
+        autofocus
+        spellcheck="false"
+        autocomplete="off"
+      />
+      <button type="submit" aria-label="Rechercher la météo">
+        <i class="fas fa-magnifying-glass"></i> Rechercher
+      </button>
+    </form>
+
+    <div class="loader" aria-live="polite" aria-busy="true"></div>
+
+    <article class="card" aria-live="polite" aria-atomic="true" role="region" tabindex="0">
+      <img src="https://i.imgur.com/MbcC6II.jpg" alt="Image jour ou nuit météo" class="weather-img" />
+      <h2 class="city-name">--</h2>
+      <p class="weather-text">--</p>
+      <p class="temperature">-- <span>°C</span></p>
+    </article>
+
+    <section class="console-log" aria-live="polite" aria-atomic="false" role="log" tabindex="0" aria-label="Journal des actions"></section>
+  </div>
+
+  <footer>© MarcTech 2025 — MarcTech Weather Interface</footer>
+
+  <script src="meteo.js"></script>
+</body>
+  </html
