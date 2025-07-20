@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root {
+  --bg-color: #0a0f1e;
+  --text-color: #66f1ff;
+  --text-shadow: 0 0 5px #0ff, 0 0 10px #06f;
+  --border-color: #0666cc;
+  --input-bg: #001022;
+  --input-border: #0099ff;
+  --btn-bg: #0099ff;
+  --btn-hover-bg: #00e6ff;
+  --card-bg: rgba(0, 10, 30, 0.9);
+  --card-shadow: 0 0 15px #00bfffaa;
+  --font-mono: 'Share Tech Mono', monospace;
+  --glitch-color: #0ff;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0; padding: 0;
+  user-select: none;
+}
+body {
+  font-family: var(--font-mono);
+  background: var(--bg-color);
+  color: var(--text-color);
+  letter-spacing: 0.12em;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 15px;
+  overflow-x: hidden;
+}
+
+/* Title */
+h1 {
+  font-size: 2.5rem;
+  color: var(--glitch-color);
+  text-shadow: 0 0 7px #0ff, 0 0 15px #00e6ff, 0 0 30px #00aaffaa;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Container */
+.container {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 25px 30px;
+  box-shadow: var(--card-shadow);
+  width: 100%;
+  max-width: 420px;
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+
+/* Input */
+input[type="text"] {
+  width: 100%;
+  padding: 12px 18px;
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: var(--text-color);
+  background: var(--input-bg);
+  border: 2px solid var(--input-border);
+  border-radius: 10px;
+  outline: none;
+  text-transform: lowercase;
+  letter-spacing: 0.15em;
+  transition: border-color 0.3s ease;
+}
+input[type="text"]:focus {
+  border-color: var(--btn-hover-bg);
+  box-shadow: 0 0 10px var(--btn-hover-bg);
+}
+
+/* Button */
+button {
+  margin-top: 18px;
+  width: 100%;
+  background: var(--btn-bg);
+  border: none;
+  padding: 14px 0;
+  font-size: 1.3rem;
+  color: var(--bg-color);
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 5px #000;
+  transition: background 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  user-select: none;
+}
+button:hover, button:focus {
+  background: var(--btn-hover-bg);
+  box-shadow: 0 0 15px var(--btn-hover-bg);
+  transform: translateY(-3px);
+}
+
+/* Card */
+.card {
+  margin-top: 30px;
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 20px 25px;
+  box-shadow: var(--card-shadow);
+  color: var(--text-color);
+  text-align: center;
+  border: 1px solid var(--border-color);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card img {
+  width: 100%;
+  max-height: 250px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 5px var(--glitch-color));
+  user-select: none;
+}
+
+.city-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 0.2em;
+  text-shadow: 0 0 6px var(--glitch-color);
+}
+.weather-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #33ffff;
+  text-shadow: 0 0 8px #0ff;
+}
+.temperature {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  color: #00ccff;
+  text-shadow: 0 0 10px #00eeff;
+}
+.temperature span {
+  font-size: 1.6rem;
+  vertical-align: top;
+  margin-left: 4px;
+}
+
+/* Loader */
+.loader {
+  margin: 30px auto;
+  border: 5px solid #0099ff33;
+  border-top: 5px solid var(--btn-bg);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+  display: none;
+  user-select: none;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+/* Log console */
+.console-log {
+  background: #001022dd;
+  border: 1px solid var(--border-color);
+  color: #00ffffcc;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  max-height: 120px;
+  overflow-y: auto;
+  padding: 10px 15px;
+  margin-top: 25px;
+  border-radius: 8px;
+  letter-spacing: 0.07em;
+  box-shadow: 0 0 10px #00ccff77 inset;
+  user-select: text;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  color: #005577aa;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  user-select: none;
+  text-align: center;
+  letter-spacing: 0.15em;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    padding: 18px 20px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .temperature {
+    font-size: 2.5rem;
+  }
+}
