@@ -1,0 +1,193 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  animation: gradientAnimation 10s ease infinite;
+  overflow: hidden;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+#banner-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-left: 20px;
+}
+
+#hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 20px;
+  z-index: 11;
+}
+
+#hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+#menu {
+  display: none;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  padding: 10px;
+  position: absolute;
+  top: 60px;
+  right: 15px;
+  z-index: 10;
+}
+
+#menu.active {
+  display: flex;
+}
+
+#menu select, #menu button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  margin: 5px 0;
+}
+
+#menu select:hover, #menu button:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(8, 10vmin);
+  grid-template-rows: repeat(8, 10vmin);
+  gap: 2px;
+  background-color: #333;
+  padding: 2px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  margin-top: 80px;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #769656;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cell.white {
+  background-color: #eeeed2;
+}
+
+.cell.highlight {
+  background-color: #ffcc00 !important;
+}
+
+.piece {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.piece.player1 {
+  background: radial-gradient(circle, #444, #000);
+}
+
+.piece.player2 {
+  background: radial-gradient(circle, #ff4d4d, #cc0000);
+}
+
+.piece.selected {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ff0;
+}
+
+.piece.king {
+  border: 2px solid gold;
+}
+
+#turn-indicator {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+
+#instructions {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #fff;
+}
+
+#congrats {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 100;
+}
+
+#congrats button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  background: #ff7e5f;
+  color: #fff;
+  margin-top: 15px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  text-align: center;
+}
+
+footer a {
+  margin: 0 10px;
+  color: #fff;
+  font-size: 24px;
+}
