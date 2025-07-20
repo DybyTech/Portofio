@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeu de Dames</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="dames.css">
+</head>
+<body>
+  <div id="banner">
+    <div id="banner-title">Jeu de Dames</div>
+    <div id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div id="menu">
+      <select id="mode">
+        <option value="ai">Jouer contre l'IA</option>
+        <option value="two-players">2 Joueurs</option>
+      </select>
+      <select id="level">
+        <option value="easy">Facile</option>
+        <option value="medium">Moyen</option>
+      </select>
+      <button id="restart">Recommencer</button>
+    </div>
+  </div>
+  <div id="board"></div>
+  <div id="turn-indicator">Tour du joueur rouge</div>
+  <div id="instructions">Cliquez sur une pièce puis sur une case pour jouer</div>
+  <div id="congrats">
+    <p id="congrats-message"></p>
+    <button id="new-game">Nouvelle partie</button>
+  </div>
+  <footer>
+    <a href="dames.html#"><i class="fab fa-facebook-f"></i></a>
+    <a href="dames.html#"><i class="fab fa-whatsapp"></i></a>
+    <a href="dames.html#"><i class="fab fa-instagram"></i></a>
+  </footer>
+
+  <script src="dames.js"></script>
+</body>
+</html>
