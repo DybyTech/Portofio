@@ -1,0 +1,108 @@
+html
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HACKER ID CARD</title>
+<link href="carte.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="overlay" id="overlay"></div>
+<div class="welcome-message" id="welcomeMessage">
+<h2>🖥️ SYSTEM INITIALIZED</h2>
+<p>
+&gt; Welcome dans le générateur de carte hacker<br/>
+&gt; Crée ton identité numérique<br/>
+&gt; Style terminal activé<br/>
+&gt; Prêt à recevoir les inputs</p>
+<p class="blink">&gt;&gt; _</p>
+<button class="welcome-btn" id="welcomeBtn">EXECUTE</button>
+</div>
+<h1>HACKER ID CARD</h1>
+<div class="container">
+<div class="form-container">
+<div class="form-group">
+<label for="realName">&gt;&gt; REAL NAME</label>
+<input class="terminal-effect" id="realName" placeholder="Dan jersey" type="text"/>
+</div>
+<div class="form-group">
+<label for="devName">&gt;&gt; HACKER NAME</label>
+<input class="terminal-effect" id="devName" placeholder="0xDarkShadow" type="text"/>
+</div>
+<div class="form-group">
+<label for="devTitle">&gt;&gt; SPECIALTY</label>
+<div class="blase-selector">
+<div class="blase-option" data-title="Code Hacker">Code Hacker</div>
+<div class="blase-option" data-title="System Cracker">System Cracker</div>
+<div class="blase-option" data-title="Cyber Ninja">Cyber Ninja</div>
+<div class="blase-option" data-title="Data Thief">Data Thief</div>
+</div>
+<input class="terminal-effect" id="devTitle" placeholder="Ou écris ta spécialité" type="text"/>
+</div>
+<div class="form-group">
+<label for="age">&gt;&gt; AGE</label>
+<input class="terminal-effect" id="age" placeholder="19" type="number" value="19"/>
+</div>
+<div class="form-group">
+<label for="nationality">&gt;&gt; ORIGIN</label>
+<input class="terminal-effect" id="nationality" placeholder="Dark Web" type="text"/>
+</div>
+<div class="form-group">
+<label for="languages">&gt;&gt; SKILLS (séparés par des virgules)</label>
+<input class="terminal-effect" id="languages" placeholder="Python, Bash, SQL..." type="text"/>
+</div>
+<div class="form-group">
+<label for="favLanguage">&gt;&gt; MAIN SKILL</label>
+<input class="terminal-effect" id="favLanguage" placeholder="Python" type="text"/>
+</div>
+<div class="form-group">
+<label for="avatar">&gt;&gt; UPLOAD AVATAR</label>
+<input accept="image/*" id="avatar" type="file"/>
+</div>
+<button class="btn" id="generateBtn">GENERATE CARD</button>
+</div>
+</div>
+<div class="card-container">
+<div class="dev-card" id="devCard">
+<div class="card-header">
+<h2 class="card-title" id="cardDevName">0xDarkShadow</h2>
+<span class="card-badge" id="cardDevTitle">Code Hacker</span>
+</div>
+<img alt="Avatar" class="card-avatar" id="avatarPreview" src="https://via.placeholder.com/150/0a0a0a/00ff41?text=HACKER"/>
+<div class="card-info">
+<div class="card-info-item">
+<span class="card-info-label">REAL NAME:</span>
+<span class="card-info-value" id="cardRealName">John Doe</span>
+</div>
+<div class="card-info-item">
+<span class="card-info-label">AGE:</span>
+<span class="card-info-value" id="cardAge">19</span>
+</div>
+<div class="card-info-item">
+<span class="card-info-label">ORIGIN:</span>
+<span class="card-info-value" id="cardNationality">Dark Web</span>
+</div>
+</div>
+<div class="card-info-item">
+<span class="card-info-label">MAIN SKILL:</span>
+<span class="card-info-value" id="cardFavLanguage">Python</span>
+</div>
+<div class="card-languages" id="cardLanguages">
+<span class="language-tag">Python</span>
+<span class="language-tag">Bash</span>
+<span class="language-tag primary">SQL</span>
+<span class="language-tag">C++</span>
+</div>
+<div class="card-footer">
+<p>© 2025 HACKER ID SYSTEM - ACCESS GRANTED</p>
+</div>
+</div>
+<button class="btn download-btn" id="downloadBtn">DOWNLOAD CARD</button>
+<div class="progress-container" id="progressContainer">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="carte.js"></script>
+</body>
+</html>
